@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player));
             ListViewItem listViewItem1 = new ListViewItem("Chanson1", 0);
             ListViewItem listViewItem2 = new ListViewItem("Chanson2", 1);
@@ -38,22 +37,17 @@
             btnDel = new Button();
             btnDelete = new Button();
             listView1 = new ListView();
-            imageList1 = new ImageList(components);
             groupBox1 = new GroupBox();
             volumeCtl1 = new XenLibrary.VolumeCtl();
             lblMediaType = new Label();
             lblDuration = new Label();
             lblTitle = new Label();
-            axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             playerCtl1 = new XenLibrary.PlayerCtl();
             panelBar = new Panel();
-            timer1 = new System.Windows.Forms.Timer(components);
             panelFront = new Panel();
-            openFileDialog1 = new OpenFileDialog();
             panelRight.SuspendLayout();
             panelCmd.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             panelBar.SuspendLayout();
             panelFront.SuspendLayout();
             SuspendLayout();
@@ -113,24 +107,13 @@
             // 
             listView1.Dock = DockStyle.Bottom;
             listView1.GridLines = true;
-            listView1.GroupImageList = imageList1;
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView1.LargeImageList = imageList1;
             listView1.Location = new Point(0, 181);
             listView1.Name = "listView1";
             listView1.Size = new Size(500, 541);
-            listView1.SmallImageList = imageList1;
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.List;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "wav.png");
-            imageList1.Images.SetKeyName(1, "mp3.png");
             // 
             // groupBox1
             // 
@@ -139,7 +122,6 @@
             groupBox1.Controls.Add(lblMediaType);
             groupBox1.Controls.Add(lblDuration);
             groupBox1.Controls.Add(lblTitle);
-            groupBox1.Controls.Add(axWindowsMediaPlayer1);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
@@ -159,8 +141,6 @@
             volumeCtl1.TabIndex = 4;
             volumeCtl1.TrackBarValue = 0;
             volumeCtl1.Visible = false;
-            volumeCtl1.EventVolume += volumeCtl1_EventVolume;
-            volumeCtl1.Load += volumeCtl1_Load;
             volumeCtl1.MouseLeave += volumeCtl1_MouseLeave;
             // 
             // lblMediaType
@@ -190,17 +170,6 @@
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Titre";
             // 
-            // axWindowsMediaPlayer1
-            // 
-            axWindowsMediaPlayer1.Dock = DockStyle.Bottom;
-            axWindowsMediaPlayer1.Enabled = true;
-            axWindowsMediaPlayer1.Location = new Point(3, 220);
-            axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
-            axWindowsMediaPlayer1.Size = new Size(930, 443);
-            axWindowsMediaPlayer1.TabIndex = 2;
-            axWindowsMediaPlayer1.Visible = false;
-            // 
             // playerCtl1
             // 
             playerCtl1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -216,7 +185,6 @@
             playerCtl1.TabIndex = 3;
             playerCtl1.TrackBarMaximum = 10;
             playerCtl1.TrackBarValue = 0;
-            playerCtl1.PlayPauseEvent += playerCtl1_PlayPauseEvent;
             playerCtl1.VolumeEvent += playerControl1_VolumeEvent;
             // 
             // panelBar
@@ -241,10 +209,6 @@
             panelFront.Size = new Size(936, 666);
             panelFront.TabIndex = 1;
             // 
-            // openFileDialog1
-            // 
-            openFileDialog1.FileName = "openFileDialog1";
-            // 
             // Player
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -259,7 +223,6 @@
             panelCmd.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             panelBar.ResumeLayout(false);
             panelFront.ResumeLayout(false);
             ResumeLayout(false);
@@ -275,16 +238,12 @@
         private Label lblDuration;
         private Label lblMediaType;
         private XenLibrary.VolumeCtl volumeCtl1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private Panel panelBar;
-        private System.Windows.Forms.Timer timer1;
         private Button btnDel;
         private Panel panelFront;
-        private ImageList imageList1;
         private Button btnDelete;
         private Panel panelCmd;
         private XenLibrary.PlayerCtl playerCtl1;
         private Button btnFilr;
-        private OpenFileDialog openFileDialog1;
     }
 }
